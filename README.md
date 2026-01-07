@@ -1,9 +1,3 @@
-# Pharmacy-management-system
-A robust Pharmacy Management System designed to transition small-to-medium pharmacies from manual workflows to a digitized, three-layer architecture. It automates secure prescription uploads, real-time inventory tracking with supplier alerts, and detailed customer record management to reduce errors 
-# Pharmacy Management System
-
-An integrated information system designed to modernize pharmacy operations by digitizing prescription management, inventory control, and customer tracking.
-
 ## 📌 Project Overview
 Many pharmacies currently rely on manual processes for prescriptions and inventory, leading to inefficiencies and higher risks of medication errors. This project provides a structured digital solution to automate these workflows using a three-layer architecture (View, Controller, and Domain layers).
 

@@ -1,1 +1,53 @@
+To set up your GitHub repository for the Pharmacy Management System project, you should use a README.md file that highlights your system design skills. This file documents the logic behind your sequence diagrams and how the system components interact across different layers.
+Pharmacy Management System: Analysis & Design
+📋 Project Overview
 
+This project focuses on the Analysis and Design of a centralized Pharmacy Management System. It utilizes a Three-Layer Architecture (View, Controller, and Domain layers) to manage secure prescription uploads, automated inventory tracking, and medication preparation.
+
+🧩 System Sequence Diagrams (SSD)
+
+The system logic is defined through two primary use cases that ensure data integrity and operational efficiency.
+1. Upload Prescription Logic
+
+This diagram models the transition of sensitive medical data from the customer to the pharmacy's secure storage.
+
+Workflow Initiation: The Customer uploads a prescription through the Prescription Handler.
+
+Verification: The system validates the format and verifies the Doctor's signature to ensure authenticity.
+
+Security & Persistence: Upon successful validation, the Prescription Handler encrypts the data before the Database stores the record and generates a unique PrescriptionID.
+
+Stakeholder Sync: The Notification Service confirms the submission to the customer and alerts the Pharmacist of a new pending order.
+
+Exception Handling: If the signature is invalid, an alternative flow triggers a reupload request back to the customer.
+
+2. Preparing Medication Logic
+
+This diagram highlights the coordination between the pharmacist, inventory manager, and external suppliers.
+
+Order Processing: The Pharmacist retrieves prescription details from the Database to begin the fulfillment process.
+
+Inventory Coordination: The Inventory Manager performs an automated stock check against the Inventory records.
+
+Supply Chain Integration: If stock levels are low, the system automatically requests a restock from the Supplier and issues a stock alert.
+
+Dispensing & Fulfillment: Once stock is confirmed and medication is prepared, the Notification Service informs the Customer it is ready for pickup.
+
+Order Holds: If clinical clarification is needed, a hold status is sent to both the Doctor and the Customer.
+
+🛠️ Design Architecture: CRC & Class Modeling
+
+View Layer: Includes actors and interfaces like the Customer, Pharmacist, and Doctor.
+
+Controller Layer: Managed by the Prescription Handler and Inventory Manager to coordinate complex workflows.
+
+Domain Layer: Consists of the Database, Inventory, Medication, and Notification Service for data persistence and process automation.
+
+⚠️ Risk Analysis & Scalability
+
+The design incorporates strategies to mitigate key technical risks:
+
+Scalability: Implementation of cloud-based infrastructure and microservices to handle increased prescription volumes and multi-branch operations.
+
+Data Integrity: Use of ACID principles (Atomicity, Consistency, Isolation, Durability) to ensure database consistency and prevent unauthorized access.
+    
